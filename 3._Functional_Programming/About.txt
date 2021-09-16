@@ -1,0 +1,27 @@
+"Hello World" //String literal
+
+() -> System.out.println("Hello World") //Functional Literal
+Also cherished by the names of : Lambda, Anonymous function
+
+
+Const = Variable //JS
+
+En funktion uden navn kaldes en anonym funktion.
+
+
+//HoF - Higher order Function A function that takes a function as an argument
+myFavoriteThings.forEach(printer)
+myFavoriteThings.forEach(element => printer(element)); // element => printer(element) <- This is a Lambda
+myFavoriteThings.forEach(element => {}); // (element => {}); <- This is a empty Lambda
+
+//Lambda
+one-liner: myFavoriteThings.forEach(element => printer(element));
+With Body: myFavoriteThings.forEach(element => {
+statement
+statement
+});
+
+
+
+
+
