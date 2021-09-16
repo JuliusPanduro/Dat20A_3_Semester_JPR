@@ -1,0 +1,22 @@
+{
+  "key": "value",
+  "manufacturer": "Airbus",
+  "isBetterThanBoeing": true,
+  "productLineSelection": 60,
+  "pilots": [{"name": "Bob"},{"name": "Bubber"},{"name": "Wright Brothers", "certificateLevel": 5}],
+  "CEO": {"name": "Peter Petersen"},
+
+
+  "trash": [
+    {
+      "name": "Julius",
+      "age": "25+++",
+      "fitInCategory": true
+    },
+    {
+      "name": "Carsten",
+      "age": "young and fit",
+      "fitInCategory": false
+    }
+  ]
+}
