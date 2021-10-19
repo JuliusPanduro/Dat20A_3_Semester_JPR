@@ -1,0 +1,27 @@
+.kanye-div{
+text-align: center;
+}
+
+.btn-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+.reaction-btn{
+    font-size: 4em;
+}
+
+.list-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#list-horny{
+    background-color: #e50914;
+}
+#list-laugh{
+
+    background-color: yellow;
+}
+#list-wtf{
+    background-color: grey;
+}

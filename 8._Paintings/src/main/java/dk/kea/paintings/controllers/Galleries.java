@@ -1,5 +1,6 @@
 package dk.kea.paintings.controllers;
 
+import dk.kea.paintings.exceptions.ResourceNotFoundError;
 import dk.kea.paintings.models.Gallery;
 import dk.kea.paintings.repositories.GalleryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class Galleries {
 
     @GetMapping("/galleries/{id}")
     public Gallery getGalleryById(@PathVariable long id) {
-        return galleries.findById(id).get();
+        return galleries.findById(id).orElseThrow(()-> new ResourceNotFoundError("Gallery does not exist"));
     }
 
     @PostMapping("/galleries")

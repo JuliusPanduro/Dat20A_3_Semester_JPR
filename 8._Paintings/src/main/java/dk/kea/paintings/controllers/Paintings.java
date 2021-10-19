@@ -1,6 +1,6 @@
 package dk.kea.paintings.controllers;
 
-import dk.kea.paintings.exceptions.ApiRequestException;
+import dk.kea.paintings.exceptions.ResourceNotFoundError;
 import dk.kea.paintings.models.Painting;
 import dk.kea.paintings.repositories.PaintingRepository;
 import io.swagger.annotations.Api;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author Julius Panduro
  */
-@Api(value = "Painting Controller",description = "REST endpoints for paintings")
+@Api(value = "Painting Controller", description = "REST endpoints for paintings")
 @RestController
 public class Paintings {
     @Autowired
@@ -27,8 +27,9 @@ public class Paintings {
     //Getting a single painting by using a id.
     @GetMapping("/paintings/{id}")
     public Painting getPaintingById(@PathVariable long id) {
-        return paintings.findById(id).orElseThrow(() -> (new ApiRequestException("Could not find Painting with id: " + id)));
+        return paintings.findById(id).orElseThrow(() -> (new ResourceNotFoundError("Painting does not exist")));
     }
+
 
     @GetMapping("/paintings/timeline")
     public List<Painting> getPaintingByArtistAndYear(@RequestParam String artist, @RequestParam int year) {
@@ -37,7 +38,7 @@ public class Paintings {
 
 
     @GetMapping("/paintings/pricelookup/{price}")
-    public List<Painting> getPaintingAboveACertainPrice(@PathVariable double price){
+    public List<Painting> getPaintingAboveACertainPrice(@PathVariable double price) {
         System.out.println(price);
         return paintings.findPaintingsAboveCertainPrice(price);
     }
