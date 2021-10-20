@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
  * @author Julius Panduro
  */
 @RestControllerAdvice
-public class NotFoundHandler {
-    @ExceptionHandler(value = {ResourceNotFoundError.class})
-    public ResponseEntity<?> handleApiRequestException(ResourceNotFoundError exception, HttpServletRequest request) {
+public class ResourceNotFoundHandler {
+    @ExceptionHandler(value = {ResourceNotFoundException.class})
+    public ResponseEntity<?> handleApiRequestException(ResourceNotFoundException exception, HttpServletRequest request) {
 
-        ErrorDetail errorDetail = new ErrorDetail(404, exception.getMessage(), request.getServletPath());
+        ExceptionDetail exceptionDetail = new ExceptionDetail(404, exception.getMessage(), request.getServletPath());
 
-        return new ResponseEntity<>(errorDetail, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(exceptionDetail, HttpStatus.NOT_FOUND);
     }
 }
 

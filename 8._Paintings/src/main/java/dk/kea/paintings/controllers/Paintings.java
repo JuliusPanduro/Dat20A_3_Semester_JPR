@@ -1,6 +1,6 @@
 package dk.kea.paintings.controllers;
 
-import dk.kea.paintings.exceptions.ResourceNotFoundError;
+import dk.kea.paintings.exceptions.ResourceNotFoundException;
 import dk.kea.paintings.models.Painting;
 import dk.kea.paintings.repositories.PaintingRepository;
 import io.swagger.annotations.Api;
@@ -27,7 +27,7 @@ public class Paintings {
     //Getting a single painting by using a id.
     @GetMapping("/paintings/{id}")
     public Painting getPaintingById(@PathVariable long id) {
-        return paintings.findById(id).orElseThrow(() -> (new ResourceNotFoundError("Painting does not exist")));
+        return paintings.findById(id).orElseThrow(() -> (new ResourceNotFoundException("Painting does not exist")));
     }
 
 
