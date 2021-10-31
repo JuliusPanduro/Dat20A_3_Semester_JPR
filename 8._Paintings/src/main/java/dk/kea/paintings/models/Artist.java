@@ -2,10 +2,12 @@ package dk.kea.paintings.models;
 
 
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Julius Panduro
@@ -42,10 +44,15 @@ public class Artist {
 
     //LAZY = fetch when needed
     //EAGER = fetch immediately
-    @ManyToOne
+   /* @ManyToOne
     @Nullable
     @JoinColumn(name = "gallery_id")
     private Gallery gallery;
 
+    @JsonIgnore
+    @ManyToMany(mappedBy = "artists", fetch = FetchType.LAZY)
+    private List<Painting> paintings;
+
+    */
 
 }

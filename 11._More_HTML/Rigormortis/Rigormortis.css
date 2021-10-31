@@ -1,0 +1,106 @@
+@font-face {
+    font-family: "RickAndMorty";
+    src: url("./fonts/get_schwifty.ttf") format("truetype");
+}
+
+
+
+body {
+    background-image: url("./img/star.jpg");
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    border-style: unset;
+}
+
+div {
+    border: 1px black solid;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+#div-wrapper {
+    display: grid;
+    grid-template-columns: 100fr 100fr 100fr 100fr;
+    border-style: unset;
+}
+
+fieldset {
+    font-family: sans-serif;
+    border: 2px solid #c8dd5d;
+    background: #262626;
+    opacity: 75%;
+    border-radius: 5px;
+    padding: 15px;
+    margin-right: 20px;
+}
+
+fieldset:hover {
+    opacity: 100%;
+}
+
+fieldset legend {
+    font-family: RickAndMorty, serif;
+    background: #0e4046;
+    color: #12b0c9;
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px #c8dd5d;
+    margin-top: 20px;
+}
+
+h4 {
+    color: #c8dd5d;
+}
+
+h3 {
+    color: #c8dd5d;
+}
+
+.search-fieldset legend {
+
+}
+
+
+/*
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    border-style: unset;
+}
+
+div {
+    border: 1px black solid;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+#div-wrapper {
+    display: grid;
+    grid-template-columns: 100fr 100fr 100fr 100fr 100fr;
+    border-style: unset;
+}
+
+fieldset {
+    font-family: sans-serif;
+    border: 5px solid #1F497D;
+    background: #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+fieldset legend {
+    background: #cfccb2;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px #ddd;
+    margin-top: 20px;
+}
+ */

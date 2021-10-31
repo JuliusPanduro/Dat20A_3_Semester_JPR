@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galleries</title>
+</head>
+<body>
+<h3>Welcome to galleries</h3>
+
+<div id="artists"></div>
+
+
+<script>
+    function escapeHTML(string) {
+        string = string.replace(/&/g, "&amp;");
+        string = string.replace(/>/g, "&gt;");
+        string = string.replace(/</g, "&lt;");
+        string = string.replace(/"/g, "&quot;");
+        string = string.replace(/'/g, "&#039;");
+        return string;
+    }
+</script>
+<script>
+
+    fetch("http://localhost:8080/artists")
+        .then(response => response.json())
+        .then(artists => {
+            const artistElement = document.getElementById("artists");
+            console.log(artists);
+            artists.map(artist => {
+                const artistDiv = document.createElement("div");
+
+                let artistBirthdate = document.createElement("div");
+             //   artistBirthdate = artistBirthdate ? escapeHTML(artistBirthdate.toString()) || " "))
+
+                artistDiv.innerHTML = `
+                <p>${escapeHTML(artist.name)}</p>
+                <p>${escapeHTML(artist.age.toString())}</p>
+
+                `
+                artistElement.appendChild(artistDiv);
+            })
+        });
+</script>
+</body>
+</html>

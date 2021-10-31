@@ -3,7 +3,10 @@ package dk.kea.paintings.controllers;
 import dk.kea.paintings.models.Artist;
 import dk.kea.paintings.repositories.ArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 /**
@@ -17,14 +20,14 @@ public class Artists {
 
     //Getting all Artists
     @GetMapping("/artists")
-    public Iterable<Artist> getArtists() {
+    public List<Artist> getArtists() {
         return artists.findAll();
     }
 
     //Getting a artist by id
     @GetMapping("/artists/{id}")
     public Artist getArtistById(@PathVariable Long id) {
-        return artists.findById(id).get();
+        return artists.findById(id).orElseThrow(()-> new ResourceNotFoundException("Artist does not exist"));
     }
 
     //Add's an artist using post

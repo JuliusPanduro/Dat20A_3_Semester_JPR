@@ -22,18 +22,23 @@ public class Gallery {
 
     @Column
     private String owner;
+
     @Column
     private String name;
+
     @Column
     private String location;
+
     @Column
     private int squareFeet;
 
     //LAZY = fetch when needed
     //EAGER = fetch immediately
-    @JsonIgnore
+  /*  @JsonIgnore
     @OneToMany(mappedBy = "gallery", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Artist> artist;
 
+
+   */
 
 }
