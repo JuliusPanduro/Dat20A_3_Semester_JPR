@@ -34,11 +34,8 @@ public class Gallery {
 
     //LAZY = fetch when needed
     //EAGER = fetch immediately
-  /*  @JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "gallery", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Artist> artist;
-
-
-   */
+    private Set<Artist> artists;
 
 }

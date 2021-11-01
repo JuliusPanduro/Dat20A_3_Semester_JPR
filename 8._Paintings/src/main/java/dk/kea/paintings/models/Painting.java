@@ -30,7 +30,6 @@ public class Painting {
     @Column
     private int year;
 
-    /*
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinTable(name = "paintings_artists",
             joinColumns = {
@@ -43,7 +42,5 @@ public class Painting {
             }
     )
     private List<Artist> artists;
-
-     */
 
 }

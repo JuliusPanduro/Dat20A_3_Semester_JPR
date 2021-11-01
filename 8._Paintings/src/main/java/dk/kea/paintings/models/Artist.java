@@ -44,15 +44,13 @@ public class Artist {
 
     //LAZY = fetch when needed
     //EAGER = fetch immediately
-   /* @ManyToOne
-    @Nullable
+    @ManyToOne
     @JoinColumn(name = "gallery_id")
+    @Nullable
     private Gallery gallery;
 
     @JsonIgnore
     @ManyToMany(mappedBy = "artists", fetch = FetchType.LAZY)
     private List<Painting> paintings;
-
-    */
 
 }
