@@ -1,42 +1,25 @@
-
-.menuUl {
-    float: left;
-    list-style-type: none;
-    margin-top: 25px;
-    margin-right: 20px;
+body {
+    background: #ffffff;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
-.menuUl li {
-    display: inline-block;
+header {
+
+    padding: 1fr;
 }
 
-.menuUl li a {
-    text-decoration: none;
-    color: #000000;
-    padding: 5px 20px;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: 0.4s ease;
+main {
+    background: coral;
 }
 
-.menuUl li a:hover {
-    background-color: #ff0000;
-    color: black;
-}
-.menuUl li .a_Artists:hover {
-    background-color: #0055e2;
-    color: black;
-}
-.menuUl li .a_Galleries:hover {
-    background-color: #ffff00;
-    color: black;
-}
-.menuUl li .a_Paintings:hover {
-    background-color: #339900;
-    color: black;
+footer {
+    background: wheat;
+    padding: 2rem;
+    text-align: center;
 }
 
-.logo img{
-    float: left;
+body {
+    font-family: system-ui, sans-serif;
 }
