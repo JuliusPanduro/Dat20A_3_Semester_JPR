@@ -38,6 +38,9 @@ public class Artist {
     @Column
     private Date birthDate;
 
+    @Column
+    private String image;
+
     @Enumerated(value = EnumType.STRING)
     @Column
     private Gender gender;

@@ -20,16 +20,12 @@
     transition: 0.4s ease;
 }
 
-.menuUl li a:hover {
+.menuUl li .a_Artists:hover {
     background-color: #ff0000;
     color: black;
 }
-.menuUl li .a_Artists:hover {
-    background-color: #0055e2;
-    color: black;
-}
 .menuUl li .a_Galleries:hover {
-    background-color: #ffff00;
+    background-color: #0055e2;
     color: black;
 }
 .menuUl li .a_Paintings:hover {
