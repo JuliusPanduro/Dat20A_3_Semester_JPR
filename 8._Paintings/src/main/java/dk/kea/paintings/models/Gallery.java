@@ -3,6 +3,7 @@ package dk.kea.paintings.models;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.minidev.json.annotate.JsonIgnore;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.Set;

@@ -10,18 +10,34 @@
 <nav id="myNav"></nav>
 <body>
 <main>
+
+   <!-- <div id="card_artist"></div> -->
+    <div id="artist_test"></div>
     <p>Main Content, ready for grids with artists.</p>
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-text">
-            <h2>Name will go here</h2>
-            <span class="Artists_Age">Age will be inserted here</span>
-            <p>Text about the artist will be inserted here, as we load the api</p>
-        </div>
+
+    <div id="create-artist-wrapper">
+
+        <input id="create-artist-name" placeholder="name"><br>
+        <input type="number" min="0" max="150" id="create-artist-age" placeholder="age"><br>
+        <input id="create-artist-img" placeholder="image url"><br>
+        <select id="create-artist-gender">
+            <option>MALE</option>
+            <option>FEMALE</option>
+            <option>OTHER</option>
+        </select>
+      <button id="create-artist-btn">Create a new artist</button>
+
+
     </div>
+
+
+
+
+
 </main>
 <script src="./Artists.js"></script>
 <script type="text/javascript" src="../Header/Header.js"></script>
+<script src="../lib/escapeHTML.js"></script>
 </body>
 <footer>Footer</footer>
 </html>

@@ -1,4 +1,4 @@
-.card {
+#card_artist {
     width: 300px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -11,11 +11,11 @@
     text-align: center;
 }
 
-.card-text {
+.card-text_artist {
     grid-area: text;
 }
 
-.card-image {
+.card-image_artist {
     grid-area: image;
     background: url("../lib/player_avatar.png");
     border-top-left-radius: 15px;
