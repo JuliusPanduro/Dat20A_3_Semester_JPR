@@ -1,37 +1,52 @@
-fetch("http://localhost:8080/artists")
+fetch(baseURL + "/artists")
     .then(response => response.json())
     .then(result => {
         result.map(createArtistCard)
     });
 
+
+
 function createArtistCard(artist) {
-    const artistElement = document.getElementById("card_artist");
+    const artistElement = document.getElementById("card-container");
     const artistDiv = document.createElement("div");
 
-    const testArtistElement = document.getElementById("artist_test")
-    const testArtistDiv = document.createElement("div");
-    testArtistDiv.innerHTML = ` 
-    
-    <h2>${escapeHTML(artist.name)}</h2>
-             <p>Age : ${escapeHTML(artist.age.toString())}</p>
-             <p>Gender : ${escapeHTML(artist.gender.toString())}</p>
-    `
-    testArtistElement.append(testArtistDiv);
-
+    let artistAvatar = artist.image;
+    if (artistAvatar === null || artistAvatar === ""){
+        artistAvatar = "../lib/player_avatar.png"
+    }else{
+        artistAvatar = escapeHTML(artist.image);
+    }
 
     artistDiv.innerHTML = `
-             <div class="card-image_artist">${artist.image}</div>
-             <div class="card-text_artist">
-             <h2>${escapeHTML(artist.name)}</h2>
-             <p>Age : ${escapeHTML(artist.age.toString())}</p>
-             <p>Gender : ${escapeHTML(artist.gender.toString())}</p>
-             <p>Nationality : ${escapeHTML(artist.nationality)}</p>
-             <p>Primary Style : ${escapeHTML(artist.primaryStyle)}</p>
-             <p>Gallery : ${artist.gallery}</p>
-             </div>
-            `
-    //artistElement.append(artistDiv);
+                <div class="card">
+                <img src="${escapeHTML(artistAvatar)}" alt="profile image" class="card-image">
+                <h2>${artist.name}</h2>
+                <p class="artist-style">${artist.primaryStyle}</p>
+                <p class="artist-age">${artist.age.toString()}</p>
+                <p class="artist-about">Nationality : ${artist.nationality} <br>
+                Gender : ${artist.gender.toString()}<br>
+                Gallery : ${artist.gallery}<br>
+                </p>
+                </div>
+                    `
+    artistElement.append(artistDiv);
 
+
+    /* artistDiv.innerHTML = `
+              <div class="card-image_artist">${artist.image}</div>
+              <div class="card-text_artist">
+              <h2>${escapeHTML(artist.name)}</h2>
+              <p>Age : ${escapeHTML(artist.age.toString())}</p>
+              <p>Gender : ${escapeHTML(artist.gender.toString())}</p>
+              <p>Nationality : ${escapeHTML(artist.nationality)}</p>
+              <p>Primary Style : ${escapeHTML(artist.primaryStyle)}</p>
+              <p>Gallery : ${artist.gallery}</p>
+              </div>
+             `
+    artistElement.append(artistDiv);
+
+
+     */
 }
 
 
@@ -48,7 +63,7 @@ function createNewArtist() {
         gender: gender
     };
 
-    fetch("http://localhost:8080/artists", {
+    fetch(baseURL + "/artists", {
         method: "POST",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
@@ -56,18 +71,17 @@ function createNewArtist() {
         body: JSON.stringify(newArtist)
     })
         .then(response => {
-            if (response.status === 200){
+            if (response.status === 200) {
                 createArtistCard(newArtist);
-            }else{
+            } else {
                 console.log("Artist not created." + response.status);
             }
         })
-        .catch(error => console.log("Network related error",error));
-
-
+        .catch(error => console.log("Network related error", error));
 }
 
-document.getElementById("create-artist-btn").addEventListener("click", createNewArtist);
+document.getElementById("create-artist-btn")
+    .addEventListener("click", createNewArtist);
 
 
 

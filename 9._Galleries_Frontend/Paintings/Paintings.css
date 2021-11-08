@@ -1,0 +1,11 @@
+.heading::after {
+    content: "";
+    width: 10rem;
+    height: .6rem;
+    background-color: #339900;
+    position: absolute;
+    bottom: -0.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2rem;
+}
