@@ -1,14 +1,20 @@
-const galleriesTableBody  = document.getElementById("galleries-tbody");
+const galleriesTableBody = document.getElementById("galleries-tbody");
 
 fetch(baseURL + "/galleries")
     .then(response => response.json())
     .then(galleries => {
-        galleries.map(gallery => {
-            const galleryTableRow = document.createElement("tr");
+        galleries.map(createGalleryTable)
+        console.log(galleries);
+    });
 
-            galleryTableRow.innerHTML = `
+
+function createGalleryTable(gallery) {
+    const galleryTableRow = document.createElement("tr");
+    galleryTableRow.id = gallery.galleryID;
+
+    galleryTableRow.innerHTML = `
             <td>
-                <a href="../Gallery/Gallery.html?galleryId=${gallery.id}">
+                <a href="../Gallery/Gallery.html?galleryId=${gallery.galleryID}">
                     <p class="galleryName">${escapeHTML(gallery.name)}</p>
                 </a>
             </td>
@@ -22,15 +28,27 @@ fetch(baseURL + "/galleries")
                 <p>${escapeHTML(gallery.squareFeet.toString())}</p>
             </td>           
             <td>
-                <button onclick="deleteGallery(${gallery.id})">❌</button>            
+                <button onclick="deleteGallery(${gallery.galleryID})">❌</button>            
             </td>
         `;
 
-            galleriesTableBody.appendChild(galleryTableRow);
-        });
+    galleriesTableBody.appendChild(galleryTableRow);
+}
 
-    });
+
+
+
+
 
 function deleteGallery(galleryId) {
     console.log(galleryId);
+    fetch(baseURL + "/galleries/" + galleryId, {
+        method: "DELETE"
+    }).then(response => {
+        if (response.status === 200) {
+            document.getElementById(galleryId).remove();
+        } else {
+            console.log("Did not delete gallery")
+        }
+    });
 }

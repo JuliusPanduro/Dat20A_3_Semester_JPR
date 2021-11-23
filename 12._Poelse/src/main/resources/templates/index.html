@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poelse</title>
+    <link rel="stylesheet" href="../static/poelse.css">
+</head>
+<h1><img src="Happy.jpg"><img src="hotdoggif.gif"><img src="sad.jpg" width="200px" height="225px"></h1>
+<body>
+<section class="poelse-section">
+    <fieldset>
+        <legend>Poelse Table</legend>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Length</th>
+                <th>Weight</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody id="poelse-tbody">
+            </tbody>
+        </table>
+    </fieldset>
+
+
+</section>
+<fieldset>
+    <legend>Create New Poelse</legend>
+    <div>
+        <input id="poelse-name" placeholder="Name"><br>
+        <input id="poelse-type" placeholder="Type Cheese, Chill etc."><br>
+        <input id="poelse-length" type="number" min="0" placeholder="Length In cm"><br>
+        <input id="poelse-weight" type="number" min="0" placeholder="Weight In g"><br>
+        <input id="poelse-price" type="number" min="0" placeholder="Price"><br>
+        <button id="create-poelse-btn">Create 🌭</button>
+    </div>
+
+</fieldset>
+
+</body>
+<script src="../static/escapeHTML.js"></script>
+<script src="../static/poelse.js"></script>
+</html>

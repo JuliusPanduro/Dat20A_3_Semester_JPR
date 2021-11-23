@@ -13,3 +13,4 @@ fetch(baseURL + "/galleries/" + galleryId)
     });
 
 //Todo Writes undefined, needs some rework
+

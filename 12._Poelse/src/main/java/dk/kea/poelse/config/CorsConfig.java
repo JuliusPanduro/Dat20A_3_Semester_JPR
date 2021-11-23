@@ -1,4 +1,4 @@
-package dk.kea.paintings.config;
+package dk.kea.poelse.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("*")
-                        .allowedMethods("GET","POST","PUT", "PATCH", "DELETE")
+                        .allowedMethods("*")
                         .allowedHeaders("*");
             }
         };
